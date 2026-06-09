@@ -122,6 +122,15 @@ h2 em{font-style:normal;color:var(--maroon)}
 .contact-item:hover{border-color:var(--maroon)}
 .contact-icon{width:32px;height:32px;border-radius:50%;background:var(--maroon-pale);display:flex;align-items:center;justify-content:center;color:var(--maroon);font-size:13px;font-weight:700;flex-shrink:0}
 
+/* TOP CONTACT BAR */
+.topbar{background:var(--maroon-dark);padding:9px 2rem}
+.topbar-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.topbar-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:500;padding:5px 12px;border-radius:20px;text-decoration:none;letter-spacing:0.03em;transition:background 0.2s,border-color 0.2s}
+.topbar-badge:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.35)}
+.topbar-badge--muted{color:rgba(255,255,255,0.6);cursor:default}
+.topbar-badge--muted:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.18)}
+.tb-icon{font-size:0.72rem;opacity:0.8;font-style:normal;font-weight:700}
+
 footer{background:var(--maroon-dark);color:rgba(255,255,255,0.55);text-align:center;padding:2rem;font-size:0.78rem}
 footer span{color:rgba(255,255,255,0.9)}
 
@@ -134,10 +143,21 @@ footer span{color:rgba(255,255,255,0.9)}
 </head>
 <body>
 
-<div style="background:var(--maroon-dark);text-align:center;padding:8px 2rem;font-size:0.78rem;color:rgba(255,255,255,0.75);letter-spacing:0.04em">
-  <a href="mailto:kfatema.tamanna@gmail.com" style="color:rgba(255,255,255,0.9);text-decoration:none;font-weight:500">✉ kfatema.tamanna@gmail.com</a>
-  <span style="margin:0 12px;opacity:0.4">|</span>
-  <span>Dhaka, Bangladesh</span>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-badge" href="mailto:kfatema.tamanna@gmail.com">
+      <span class="tb-icon">✉</span>kfatema.tamanna@gmail.com
+    </a>
+    <a class="topbar-badge" href="tel:+8801847162696">
+      <span class="tb-icon">✆</span>+880 18 47 162696
+    </a>
+    <a class="topbar-badge" href="https://bd.linkedin.com/in/kftamanna/" target="_blank">
+      <span class="tb-icon">in</span>linkedin.com/in/kftamanna
+    </a>
+    <span class="topbar-badge topbar-badge--muted">
+      <span class="tb-icon">⌖</span>Dhaka, Bangladesh
+    </span>
+  </div>
 </div>
 <nav>
   <div class="nav-inner">
