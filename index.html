@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kaniz Fatema Tamanna</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --maroon:#7B2D3E;--maroon-light:#9E3D52;--maroon-pale:#F9EEF1;
+  --maroon-mid:#C4768A;--maroon-dark:#5A1F2C;--cream:#FDF8F5;
+  --text:#2A1A1E;--muted:#7A6468;--border:#E8D5DA;--white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:var(--cream);color:var(--text);line-height:1.7}
+
+nav{position:fixed;top:0;width:100%;background:rgba(253,248,245,0.96);backdrop-filter:blur(8px);z-index:100;border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:Georgia,'Times New Roman',serif;font-size:1.05rem;color:var(--maroon);font-weight:700;letter-spacing:0.02em}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.78rem;color:var(--muted);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--maroon)}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 2rem 4rem;background:linear-gradient(160deg,var(--maroon-pale) 0%,var(--cream) 55%)}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-tag{display:inline-block;background:var(--maroon);color:#fff;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:1.5rem;font-weight:500}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:3.2rem;line-height:1.15;color:var(--text);margin-bottom:0.6rem}
+h1 span{color:var(--maroon)}
+.hero-headline{font-size:0.88rem;color:var(--maroon-mid);font-weight:500;margin-bottom:1rem;letter-spacing:0.03em}
+.hero-sub{font-size:0.93rem;color:var(--muted);margin-bottom:2rem;max-width:430px}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--maroon);color:#fff;padding:12px 28px;border-radius:3px;text-decoration:none;font-size:0.83rem;font-weight:500;letter-spacing:0.04em;transition:background 0.2s}
+.btn-primary:hover{background:var(--maroon-dark)}
+.btn-outline{border:1.5px solid var(--maroon);color:var(--maroon);padding:11px 28px;border-radius:3px;text-decoration:none;font-size:0.83rem;font-weight:500;transition:all 0.2s}
+.btn-outline:hover{background:var(--maroon-pale)}
+.hero-visual{display:flex;justify-content:center}
+.avatar-ring{width:300px;height:300px;border-radius:50%;border:2px solid var(--maroon-mid);display:flex;align-items:center;justify-content:center;position:relative}
+.avatar-ring::before{content:'';position:absolute;width:272px;height:272px;border-radius:50%;border:1px dashed var(--maroon-mid);opacity:0.35}
+.avatar-inner{width:240px;height:240px;border-radius:50%;background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-light) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px}
+.avatar-initials{font-family:Georgia,'Times New Roman',serif;font-size:3.2rem;color:#fff;font-weight:700;line-height:1}
+.avatar-label{font-size:0.65rem;color:rgba(255,255,255,0.65);letter-spacing:0.15em;text-transform:uppercase}
+.ai-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.2rem}
+.ai-badge{font-size:0.7rem;padding:3px 10px;border-radius:2px;background:var(--maroon-pale);border:1px solid var(--border);color:var(--maroon-dark);font-weight:500}
+
+section{padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:0.5rem}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:2.1rem;color:var(--text);margin-bottom:2.8rem;line-height:1.2}
+h2 em{font-style:normal;color:var(--maroon)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:start}
+.about-text p{font-size:0.92rem;color:var(--muted);margin-bottom:0.9rem}
+.stat-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.stat-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem;text-align:center}
+.stat-num{font-family:Georgia,'Times New Roman',serif;font-size:1.9rem;color:var(--maroon);font-weight:700}
+.stat-desc{font-size:0.73rem;color:var(--muted);margin-top:4px;letter-spacing:0.04em}
+
+/* PHILOSOPHY */
+.philosophy-bg{background:var(--maroon-dark)}
+.philosophy-bg .section-label{color:var(--maroon-mid)}
+.philosophy-bg h2{color:#fff}
+.phil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem}
+.phil-card{border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:1.2rem}
+.phil-num{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;color:var(--maroon-mid);margin-bottom:0.4rem}
+.phil-text{font-size:0.83rem;color:rgba(255,255,255,0.75);line-height:1.5}
+
+/* SKILLS */
+.skills-bg{background:var(--white)}
+.skills-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem}
+.skill-group{}
+.skill-group-title{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:0.8rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border)}
+.skill-list{display:flex;flex-direction:column;gap:6px}
+.skill-item{font-size:0.83rem;color:var(--text);display:flex;align-items:center;gap:8px}
+.skill-dot{width:5px;height:5px;border-radius:50%;background:var(--maroon-mid);flex-shrink:0}
+
+/* STACK TABLE */
+.stack-table{width:100%;border-collapse:collapse;font-size:0.86rem}
+.stack-table th{text-align:left;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:10px 16px;border-bottom:1.5px solid var(--border)}
+.stack-table td{padding:10px 16px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
+.stack-table td:first-child{color:var(--muted);font-weight:500;white-space:nowrap;width:140px}
+.stack-table tr:last-child td{border-bottom:none}
+
+/* HIGHLIGHTS */
+.highlights-bg{background:var(--maroon-pale)}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.hl-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start}
+.hl-icon{width:34px;height:34px;border-radius:50%;background:var(--maroon);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#fff;font-weight:700;margin-top:2px}
+.hl-text{font-size:0.85rem;color:var(--muted);line-height:1.5}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:1.5px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:2.5rem}
+.timeline-dot{position:absolute;left:-2.4rem;top:5px;width:13px;height:13px;border-radius:50%;background:var(--maroon);border:2px solid var(--cream)}
+.tl-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.3rem}
+.tl-role{font-weight:600;font-size:0.95rem;color:var(--text)}
+.tl-company{font-weight:500;color:var(--maroon);font-size:0.88rem}
+.tl-date{font-size:0.76rem;color:var(--muted);background:var(--maroon-pale);padding:3px 10px;border-radius:2px;white-space:nowrap}
+.tl-desc{font-size:0.84rem;color:var(--muted);margin-top:0.5rem}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.7rem}
+.tag{font-size:0.72rem;padding:3px 10px;border:1px solid var(--border);border-radius:2px;color:var(--muted)}
+
+/* ACHIEVEMENTS */
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.ach-card{background:var(--white);border-left:3px solid var(--maroon);padding:1.2rem 1.4rem;border-radius:0 6px 6px 0;border:1px solid var(--border);border-left:3px solid var(--maroon)}
+.ach-year{font-size:0.7rem;color:var(--maroon);font-weight:600;letter-spacing:0.08em;margin-bottom:0.3rem}
+.ach-title{font-weight:600;font-size:0.88rem;color:var(--text);margin-bottom:0.3rem}
+.ach-desc{font-size:0.78rem;color:var(--muted)}
+
+/* EDUCATION */
+.edu-bg{background:var(--white)}
+.edu-card{background:var(--maroon);border-radius:8px;padding:2.5rem;color:#fff;max-width:480px}
+.edu-degree{font-family:Georgia,'Times New Roman',serif;font-size:1.45rem;margin-bottom:0.5rem}
+.edu-school{font-size:0.88rem;opacity:0.85;margin-bottom:0.3rem}
+.edu-year{font-size:0.78rem;opacity:0.6}
+
+/* CONTACT */
+.contact-row{display:flex;flex-wrap:wrap;gap:1rem}
+.contact-item{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:14px 20px;font-size:0.84rem;color:var(--text);text-decoration:none;transition:border-color 0.2s}
+.contact-item:hover{border-color:var(--maroon)}
+.contact-icon{width:32px;height:32px;border-radius:50%;background:var(--maroon-pale);display:flex;align-items:center;justify-content:center;color:var(--maroon);font-size:13px;font-weight:700;flex-shrink:0}
+
+footer{background:var(--maroon-dark);color:rgba(255,255,255,0.55);text-align:center;padding:2rem;font-size:0.78rem}
+footer span{color:rgba(255,255,255,0.9)}
+
+@media(max-width:768px){
+  .hero-inner,.about-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  h1{font-size:2.3rem}
+}
+</style>
+</head>
+<body>
+
+<div style="background:var(--maroon-dark);text-align:center;padding:8px 2rem;font-size:0.78rem;color:rgba(255,255,255,0.75);letter-spacing:0.04em">
+  <a href="mailto:kfatema.tamanna@gmail.com" style="color:rgba(255,255,255,0.9);text-decoration:none;font-weight:500">✉ kfatema.tamanna@gmail.com</a>
+  <span style="margin:0 12px;opacity:0.4">|</span>
+  <span>Dhaka, Bangladesh</span>
+</div>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Kaniz Fatema Tamanna</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Software Architect · AI Product Engineer</div>
+      <h1>Kaniz Fatema<br/><span>Tamanna</span></h1>
+      <p class="hero-headline">Full-Stack Systems Designer · 14+ Years Experience</p>
+      <p class="hero-sub">14+ years architecting enterprise-grade systems with .NET, Node.js, and modern JavaScript frameworks. Specialized in cloud-native architecture, distributed systems, and building production-ready AI-powered applications at scale.</p>
+      <div class="hero-cta">
+        <a href="#highlights" class="btn-primary">Key Highlights</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+      <div class="ai-badges">
+        <span class="ai-badge">Node.js</span>
+        <span class="ai-badge">RAG Pipelines</span>
+        <span class="ai-badge">AI Voice Assistants</span>
+        <span class="ai-badge">Vector Search</span>
+        <span class="ai-badge">LLM Integration</span>
+        <span class="ai-badge">Flutter</span>
+        <span class="ai-badge">GCP</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <div class="avatar-initials">KFT</div>
+          <div class="avatar-label">Dhaka, Bangladesh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <h2>Who I <em>am</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Software Architect with 14+ years of experience designing and delivering enterprise-scale applications, cloud-native platforms, and AI-powered products. Proven expertise in architecting distributed systems, high-performance APIs, real-time communication platforms, and intelligent automation solutions using .NET, Node.js, JavaScript ecosystems, and modern cloud technologies.</p>
+        <p>Experienced in leading end-to-end product development, from architecture and infrastructure design to deployment and scaling. Strong focus on building resilient, maintainable, and cost-efficient systems while leveraging modern AI technologies to solve real-world business challenges.</p>
+      </div>
+      <div>
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">14+</div>
+            <div class="stat-desc">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">7</div>
+            <div class="stat-desc">Companies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-desc">Awards</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">AI</div>
+            <div class="stat-desc">RAG · Voice · LLM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy-bg">
+  <div class="section-inner">
+    <div class="section-label">Philosophy</div>
+    <h2>How I <em>build</em></h2>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <div class="phil-num">01</div>
+        <p class="phil-text">Build systems that scale gracefully under real-world load.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">02</div>
+        <p class="phil-text">Prioritize maintainability over unnecessary complexity.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">03</div>
+        <p class="phil-text">Design around real user pain points, not assumptions.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">04</div>
+        <p class="phil-text">Balance rapid innovation with production stability.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">05</div>
+        <p class="phil-text">Focus on clean architecture and long-term sustainability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="section-inner">
+    <div class="section-label">Expertise</div>
+    <h2>Core <em>skills</em></h2>
+    <div class="skills-columns">
+      <div class="skill-group">
+        <div class="skill-group-title">Software Architecture</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span>Enterprise Application Architecture</div>
+          <div class="skill-item"><span class="skill-dot"></span>Distributed Systems</div>
+          <div class="skill-item"><span class="skill-dot"></span>Microservices Architecture</div>
+          <div class="skill-item"><span class="skill-dot"></span>Event-Driven Systems</div>
+          <div class="skill-item"><span class="skill-dot"></span>Domain-Driven Design (DDD)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Clean Architecture</div>
+          <div class="skill-item"><span class="skill-dot"></span>API-First Design</div>
+          <div class="skill-item"><span class="skill-dot"></span>System Integration</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Backend Engineering</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span>.NET / ASP.NET Core · C#</div>
+          <div class="skill-item"><span class="skill-dot"></span>Node.js / Express.js</div>
+          <div class="skill-item"><span class="skill-dot"></span>REST APIs · GraphQL</div>
+          <div class="skill-item"><span class="skill-dot"></span>WebSockets</div>
+          <div class="skill-item"><span class="skill-dot"></span>Authentication & Authorization</div>
+          <div class="skill-item"><span class="skill-dot"></span>High-Performance Backend Systems</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Frontend Technologies</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span>JavaScript · TypeScript</div>
+          <div class="skill-item"><span class="skill-dot"></span>React · Next.js</div>
+          <div class="skill-item"><span class="skill-dot"></span>Modern Frontend Architecture</div>
+          <div class="skill-item"><span class="skill-dot"></span>SPA Development</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">AI & Intelligent Systems</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span>Retrieval-Augmented Generation (RAG)</div>
+          <div class="skill-item"><span class="skill-dot"></span>AI Agents & Agentic Workflows</div>
+          <div class="skill-item"><span class="skill-dot"></span>AI Voice Assistants</div>
+          <div class="skill-item"><span class="skill-dot"></span>Prompt Engineering</div>
+          <div class="skill-item"><span class="skill-dot"></span>Vector Search · Semantic Search</div>
+          <div class="skill-item"><span class="skill-dot"></span>LLM Application Development</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud & DevOps</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span>Amazon Web Services (AWS)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Google Cloud Platform (GCP)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Microsoft Azure</div>
+          <div class="skill-item"><span class="skill-dot"></span>Docker · CI/CD Pipelines</div>
+          <div class="skill-item"><span class="skill-dot"></span>Cloud Security</div>
+          <div class="skill-item"><span class="skill-dot"></span>Monitoring & Observability</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data & Storage</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span>SQL Server · PostgreSQL · MySQL</div>
+          <div class="skill-item"><span class="skill-dot"></span>Redis</div>
+          <div class="skill-item"><span class="skill-dot"></span>Vector Databases</div>
+          <div class="skill-item"><span class="skill-dot"></span>Data Modeling</div>
+          <div class="skill-item"><span class="skill-dot"></span>Query Optimization</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem">
+      <div class="section-label" style="margin-bottom:1rem">Technology Stack</div>
+      <div style="background:var(--cream);border:1px solid var(--border);border-radius:8px;overflow:hidden">
+        <table class="stack-table">
+          <thead><tr><th>Category</th><th>Technologies</th></tr></thead>
+          <tbody>
+            <tr><td>Languages</td><td>C#, JavaScript, Dart</td></tr>
+            <tr><td>Frameworks</td><td>ASP.NET Core, Flutter, React, Express.js</td></tr>
+            <tr><td>AI Stack</td><td>Gemini API, FAISS, Sentence Transformers</td></tr>
+            <tr><td>Databases</td><td>SQL Server, PostgreSQL, Vector Databases</td></tr>
+            <tr><td>Cloud</td><td>Google Cloud Platform (GCP)</td></tr>
+            <tr><td>Tools</td><td>Docker, Git, CI/CD, Redis, RabbitMQ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights" class="highlights-bg">
+  <div class="section-inner">
+    <div class="section-label">Impact</div>
+    <h2>Professional <em>highlights</em></h2>
+    <div class="highlights-grid">
+      <div class="hl-card">
+        <div class="hl-icon">.N</div>
+        <p class="hl-text">14+ years building enterprise-grade backend systems with .NET and ASP.NET Core — from monolithic foundations to modern microservices and distributed architectures.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">JS</div>
+        <p class="hl-text">Proficient in Node.js and the modern JavaScript ecosystem — designing high-performance APIs, real-time services, and scalable server-side solutions with Express.js and beyond.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">⚛</div>
+        <p class="hl-text">Experienced with React, Next.js, and TypeScript for building modern, responsive, and maintainable frontend systems with clean component architecture and state management.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">☁</div>
+        <p class="hl-text">Architected cloud-native applications across AWS, GCP, and Azure — leveraging containerisation, CI/CD pipelines, cloud security, and production monitoring for resilient deployments.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">AI</div>
+        <p class="hl-text">Built production-ready AI-powered applications including RAG pipelines, LLM-integrated APIs, AI voice assistants, and agentic workflow systems solving real business problems.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">∞</div>
+        <p class="hl-text">End-to-end product ownership — from system design and API architecture to cloud deployment and scaling — bridging engineering depth with business impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Career</div>
+    <h2>Work <em>experience</em></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-role">Software Architect</div>
+            <div class="tl-company">FutureMind Ltd.</div>
+          </div>
+          <div class="tl-date">Present</div>
+        </div>
+        <p class="tl-desc">Serving as Software Architect for FutureMind Ltd., contributing to the design and development of two flagship AI-powered products aimed at enterprise productivity and workflow automation.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:0.9rem">
+          <div style="background:var(--maroon-pale);border:1px solid var(--border);border-radius:6px;padding:0.9rem 1rem">
+            <div style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:0.3rem">EasyFlow</div>
+            <p style="font-size:0.8rem;color:var(--muted);line-height:1.5">An AI-powered interactive session and engagement platform — enabling trainers, educators, and facilitators to run live, data-driven sessions with real-time participant interaction.</p>
+          </div>
+          <div style="background:var(--maroon-pale);border:1px solid var(--border);border-radius:6px;padding:0.9rem 1rem">
+            <div style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:0.3rem">EasyDO</div>
+            <p style="font-size:0.8rem;color:var(--muted);line-height:1.5">An AI inference and workflow automation platform designed to streamline business operations, automate repetitive tasks, and integrate intelligent decision-making into enterprise workflows.</p>
+          </div>
+        </div>
+        <div class="tl-tags" style="margin-top:0.8rem"><span class="tag">AI Architecture</span><span class="tag">Flutter</span><span class="tag">.NET Core</span><span class="tag">GCP</span><span class="tag">RAG</span><span class="tag">LLM Integration</span></div>
+      </div>
+
+      <div class="timeline-item">
+          </div>
+          <div class="tl-date">Mar 2022 – Present</div>
+        </div>
+        <p class="tl-desc">Team Lead and technical architect for PiHR — a SaaS-based HR & Payroll platform. Built high-performance microservice solutions with DevOps and infrastructure operations.</p>
+        <div class="tl-tags"><span class="tag">.NET 7</span><span class="tag">ASP.NET Core</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">MSSQL</span><span class="tag">Scrum</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-role">Staff Software Engineer</div>
+            <div class="tl-company">Vivasoft Limited</div>
+          </div>
+          <div class="tl-date">Mar 2022 – Present</div>
+        </div>
+        <p class="tl-desc">Team Lead and technical architect for PiHR — a SaaS-based HR & Payroll platform. Built high-performance microservice solutions with DevOps and infrastructure operations.</p>
+        <div class="tl-tags"><span class="tag">.NET 7</span><span class="tag">ASP.NET Core</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">MSSQL</span><span class="tag">Scrum</span></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-role">Solution Architect / Tech Lead</div>
+            <div class="tl-company">CommEngine</div>
+          </div>
+          <div class="tl-date">Sep 2018 – Feb 2022</div>
+        </div>
+        <p class="tl-desc">Lead architect for CommEngine Social CRM and Zachai product authentication platform. Built multi-tenant SaaS across Web, Chatbot, SMS & USSD gateway channels.</p>
+        <div class="tl-tags"><span class="tag">Angular 9</span><span class="tag">ASP.NET Core</span><span class="tag">Messenger API</span><span class="tag">AI SaaS</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-role">Sr. Software Engineer</div>
+            <div class="tl-company">IQVIA (M&H Informatics BD Ltd)</div>
+          </div>
+          <div class="tl-date">Jan 2013 – Aug 2018</div>
+        </div>
+        <p class="tl-desc">Designed and developed the BI Hosting Platform — a global PaaS for data source hosting, user security, and multi-BI tool integration across health sectors worldwide.</p>
+        <div class="tl-tags"><span class="tag">C#</span><span class="tag">ASP.NET MVC</span><span class="tag">SharePoint</span><span class="tag">SQL Server</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-role">Software Engineer</div>
+            <div class="tl-company">LEADS Corporation Ltd.</div>
+          </div>
+          <div class="tl-date">May 2011 – Dec 2012</div>
+        </div>
+        <p class="tl-desc">Contributed to BankUltimus core banking solution — module development, database design using C#, ASP.NET, Oracle 11g and PL/SQL.</p>
+        <div class="tl-tags"><span class="tag">C#</span><span class="tag">Oracle 11g</span><span class="tag">PL/SQL</span><span class="tag">Core Banking</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-role">Junior Programmer</div>
+            <div class="tl-company">Creash (Creativity Unleashed)</div>
+          </div>
+          <div class="tl-date">Jan 2011 – Apr 2011</div>
+        </div>
+        <p class="tl-desc">Developed e-commerce and social networking solutions using PHP, Drupal, MySQL and PayPal integration.</p>
+        <div class="tl-tags"><span class="tag">PHP</span><span class="tag">Drupal</span><span class="tag">MySQL</span><span class="tag">AJAX</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards" style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-label">Recognition</div>
+    <h2>Awards & <em>achievements</em></h2>
+    <div class="achievements-grid">
+      <div class="ach-card">
+        <div class="ach-year">2020</div>
+        <div class="ach-title">Honorable Mention · ICT Ministry</div>
+        <p class="ach-desc">Team contribution in the 'Call for Nation' national hackathon program.</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-year">2019</div>
+        <div class="ach-title">BASIS National ICT Award</div>
+        <p class="ach-desc">Team contribution on CommEngine's social CRM platform.</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-year">2016</div>
+        <div class="ach-title">Nakshatra Award · IQVIA</div>
+        <p class="ach-desc">Star Contributor at Global Delivery Center for individual contribution.</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-year">2016</div>
+        <div class="ach-title">Aryabhatta Innovation Award · IQVIA</div>
+        <p class="ach-desc">Team contribution at Global Delivery Center, IQVIA.</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-year">2014</div>
+        <div class="ach-title">Most Promising Developer · IQVIA</div>
+        <p class="ach-desc">Individual contribution award at Global Delivery Center.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="edu-bg">
+  <div class="section-inner">
+    <div class="section-label">Education</div>
+    <h2>Academic <em>background</em></h2>
+    <div class="edu-card">
+      <div class="edu-degree">B.Sc. in Computer Science & Engineering</div>
+      <div class="edu-school">Chittagong University of Engineering & Technology (CUET)</div>
+      <div class="edu-year">Graduated 2010 · Chittagong, Bangladesh</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <h2>Get in <em>touch</em></h2>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:kfatema.tamanna@gmail.com">
+        <div class="contact-icon">@</div>
+        <div>
+          <div style="font-weight:500;font-size:0.82rem">Email</div>
+          <div style="font-size:0.76rem;color:#7A6468">kfatema.tamanna@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-item" href="tel:+8801847162696">
+        <div class="contact-icon" style="font-size:11px">TEL</div>
+        <div>
+          <div style="font-weight:500;font-size:0.82rem">Phone</div>
+          <div style="font-size:0.76rem;color:#7A6468">+880 18 47 162696</div>
+        </div>
+      </a>
+      <a class="contact-item" href="https://bd.linkedin.com/in/kftamanna/" target="_blank">
+        <div class="contact-icon">in</div>
+        <div>
+          <div style="font-weight:500;font-size:0.82rem">LinkedIn</div>
+          <div style="font-size:0.76rem;color:#7A6468">linkedin.com/in/kftamanna</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Kaniz Fatema Tamanna · Software Architect & AI Product Engineer · <span>Dhaka, Bangladesh</span></p>
+</footer>
+
+
+</script>
+</body>
+</html>
