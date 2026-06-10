@@ -84,6 +84,16 @@ h1 span{color:var(--maroon)}
 .skill-item{font-size:0.83rem;color:var(--text);display:flex;align-items:center;gap:8px}
 .skill-dot{width:5px;height:5px;border-radius:50%;background:var(--maroon-mid);flex-shrink:0}
 
+/* COMPANIES */
+.slide-companies{background:var(--white)}
+.companies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-top:0.5rem}
+.company-card{display:flex;flex-direction:column;align-items:center;gap:0.8rem;padding:1.8rem 1.2rem;border:1px solid var(--border);border-radius:12px;background:var(--cream);transition:transform 0.2s,box-shadow 0.2s;text-align:center}
+.company-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(123,45,62,0.1)}
+.company-logo-wrap{width:100%}
+.company-logo-svg{width:100%;height:auto;border-radius:6px;display:block}
+.company-name{font-weight:700;font-size:0.88rem;color:var(--text)}
+.company-sub{font-size:0.74rem;color:var(--muted);letter-spacing:0.02em}
+
 /* HIGHLIGHTS */
 .slide-highlights{background:var(--maroon-pale)}
 .highlights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
@@ -154,6 +164,7 @@ footer span{color:rgba(255,255,255,0.85)}
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#companies">Companies</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#highlights">Highlights</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -202,7 +213,80 @@ footer span{color:rgba(255,255,255,0.85)}
     <div class="scroll-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Scroll</div>
   </div>
 
-  <!-- 2: ABOUT -->
+  <!-- 2: COMPANIES -->
+  <div class="slide slide-companies" id="companies" data-label="Companies">
+    <div class="slide-inner">
+      <div class="section-label">Experience</div>
+      <h2>Companies I've <em>worked with</em></h2>
+      <div class="companies-grid">
+
+        <div class="company-card" style="--brand:#C8102E">
+          <div class="company-logo-wrap">
+            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="48" rx="6" fill="#C8102E"/>
+              <text x="60" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="700" fill="#fff" letter-spacing="1">IQVIA</text>
+            </svg>
+          </div>
+          <div class="company-name">IQVIA</div>
+          <div class="company-sub">Global Health Data & Analytics</div>
+        </div>
+
+        <div class="company-card" style="--brand:#1A3D6E">
+          <div class="company-logo-wrap">
+            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="48" rx="6" fill="#1A3D6E"/>
+              <text x="60" y="20" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="1">LEADS</text>
+              <text x="60" y="35" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.5">CORPORATION LTD</text>
+            </svg>
+          </div>
+          <div class="company-name">LEADS Corporation Ltd.</div>
+          <div class="company-sub">Core Banking Solutions</div>
+        </div>
+
+        <div class="company-card" style="--brand:#0057A8">
+          <div class="company-logo-wrap">
+            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="48" rx="6" fill="#0057A8"/>
+              <text x="60" y="20" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="#fff" letter-spacing="0.5">VIVASOFT</text>
+              <text x="60" y="35" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="1">LIMITED</text>
+            </svg>
+          </div>
+          <div class="company-name">Vivasoft Limited</div>
+          <div class="company-sub">SaaS & Enterprise Software</div>
+        </div>
+
+        <div class="company-card" style="--brand:#6B2D8B">
+          <div class="company-logo-wrap">
+            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="48" rx="6" fill="#6B2D8B"/>
+              <text x="60" y="20" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="#fff" letter-spacing="0.5">CommEngine</text>
+              <text x="60" y="35" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="1">LTD</text>
+            </svg>
+          </div>
+          <div class="company-name">CommEngine Ltd.</div>
+          <div class="company-sub">Social CRM & AI SaaS</div>
+        </div>
+
+        <div class="company-card" style="--brand:#1A4298">
+          <div class="company-logo-wrap">
+            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="48" rx="6" fill="#1A4298"/>
+              <ellipse cx="26" cy="24" rx="10" ry="10" fill="#fff"/>
+              <ellipse cx="26" cy="24" rx="7" ry="7" fill="#1A4298"/>
+              <ellipse cx="26" cy="24" rx="4" ry="4" fill="#fff"/>
+              <text x="70" y="29" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="#fff" letter-spacing="0.3">Unilever</text>
+            </svg>
+          </div>
+          <div class="company-name">Unilever Bangladesh</div>
+          <div class="company-sub">Global Consumer Goods</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="scroll-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Scroll</div>
+  </div>
+
+  <!-- 3: ABOUT -->
   <div class="slide" id="about" data-label="About">
     <div class="slide-inner">
       <div class="section-label">About</div>
