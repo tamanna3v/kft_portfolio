@@ -91,6 +91,8 @@ h1 span{color:var(--maroon)}
 .company-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(123,45,62,0.1)}
 .company-logo-wrap{width:100%}
 .company-logo-svg{width:100%;height:auto;border-radius:6px;display:block}
+.company-logo-img-wrap{border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;height:48px;padding:6px 12px}
+.company-logo-img{max-width:100%;max-height:36px;object-fit:contain;display:block}
 .company-name{font-weight:700;font-size:0.88rem;color:var(--text)}
 .company-sub{font-size:0.74rem;color:var(--muted);letter-spacing:0.02em}
 
@@ -221,11 +223,8 @@ footer span{color:rgba(255,255,255,0.85)}
       <div class="companies-grid">
 
         <div class="company-card" style="--brand:#C8102E">
-          <div class="company-logo-wrap">
-            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="48" rx="6" fill="#C8102E"/>
-              <text x="60" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="700" fill="#fff" letter-spacing="1">IQVIA</text>
-            </svg>
+          <div class="company-logo-wrap company-logo-img-wrap" style="background:#C8102E">
+            <img src="https://i.ibb.co/ymdYySL2/iqvia-logo-white.jpg" alt="IQVIA" class="company-logo-img"/>
           </div>
           <div class="company-name">IQVIA</div>
           <div class="company-sub">Global Health Data & Analytics</div>
@@ -255,13 +254,9 @@ footer span{color:rgba(255,255,255,0.85)}
           <div class="company-sub">SaaS & Enterprise Software</div>
         </div>
 
-        <div class="company-card" style="--brand:#6B2D8B">
-          <div class="company-logo-wrap">
-            <svg class="company-logo-svg" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="48" rx="6" fill="#6B2D8B"/>
-              <text x="60" y="20" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="#fff" letter-spacing="0.5">CommEngine</text>
-              <text x="60" y="35" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="1">LTD</text>
-            </svg>
+        <div class="company-card" style="--brand:#fff">
+          <div class="company-logo-wrap company-logo-img-wrap" style="background:#fff;border:1px solid var(--border)">
+            <img src="https://i.ibb.co/9318j468/commengine-logo.png" alt="CommEngine" class="company-logo-img"/>
           </div>
           <div class="company-name">CommEngine Ltd.</div>
           <div class="company-sub">Social CRM & AI SaaS</div>
