@@ -22,5 +22,13 @@
     "excerpt": "Hard-won lessons on structuring ASP.NET Core solutions that stay maintainable as the team and the codebase grow.",
     "tags": [".NET", "Architecture", "Backend"],
     "thumbnail": "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "slug": "clean-code-tips",
+    "title": "Tips for Writing Cleaner, More Readable Code",
+    "date": "2023-03-22",
+    "excerpt": "Practical habits and modern C# features — small functions, meaningful names, early returns, switch expressions, pattern matching, and more — for code that's easier to read and maintain.",
+    "tags": ["C#", ".NET", "Clean Code", "Best Practices"],
+    "thumbnail": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=60"
   }
 ]
