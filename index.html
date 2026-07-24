@@ -133,10 +133,73 @@ h2 em{font-style:normal;color:var(--maroon)}
 footer{background:var(--maroon-dark);color:rgba(255,255,255,0.55);text-align:center;padding:2rem;font-size:0.78rem}
 footer span{color:rgba(255,255,255,0.9)}
 
+/* ===== BLOG OVERLAY ===== */
+.blog-overlay{position:fixed;inset:0;z-index:2000;background:var(--cream);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,visibility 0.3s;overflow-y:auto}
+.blog-overlay.open{opacity:1;visibility:visible;transform:translateY(0)}
+body.blog-open{overflow:hidden}
+.blog-top{position:sticky;top:0;z-index:5;background:rgba(253,248,245,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.blog-top-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;padding:0 1.5rem}
+.blog-brand{font-family:Georgia,'Times New Roman',serif;font-size:1.15rem;color:var(--maroon);font-weight:700;letter-spacing:0.02em}
+.blog-close{background:none;border:1px solid var(--border);border-radius:4px;color:var(--muted);font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:500;padding:8px 16px;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.blog-close:hover{border-color:var(--maroon);color:var(--maroon)}
+.blog-body{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.blog-intro .section-label{margin-bottom:0.4rem}
+.blog-intro h2{font-size:2rem;margin-bottom:0.6rem}
+.blog-intro p{font-size:0.92rem;color:var(--muted);margin-bottom:2.5rem;max-width:560px}
+
+/* post list */
+.blog-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(123,45,62,0.12);border-color:var(--maroon-mid)}
+.blog-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--maroon-pale);display:block}
+.blog-thumb-fallback{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-light) 100%);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.9);font-family:Georgia,serif;font-size:1.4rem;font-weight:700;padding:1rem;text-align:center;line-height:1.2}
+.blog-card-body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.blog-card-date{font-size:0.72rem;color:var(--maroon);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.4rem}
+.blog-card-title{font-family:Georgia,'Times New Roman',serif;font-size:1.12rem;color:var(--text);line-height:1.3;margin-bottom:0.5rem}
+.blog-card-excerpt{font-size:0.84rem;color:var(--muted);line-height:1.55;flex:1}
+.blog-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem}
+.blog-card-tags .tag{font-size:0.68rem}
+
+/* status / empty / error */
+.blog-status{text-align:center;color:var(--muted);font-size:0.9rem;padding:3rem 1rem}
+.blog-status.error{color:var(--maroon-dark)}
+.blog-spinner{width:30px;height:30px;border:3px solid var(--border);border-top-color:var(--maroon);border-radius:50%;margin:0 auto 1rem;animation:blog-spin 0.8s linear infinite}
+@keyframes blog-spin{to{transform:rotate(360deg)}}
+
+/* article view */
+.blog-back{background:none;border:none;color:var(--maroon);font-size:0.82rem;font-weight:600;letter-spacing:0.03em;cursor:pointer;padding:0;margin-bottom:1.6rem;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
+.blog-back:hover{color:var(--maroon-dark)}
+.blog-hero-img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;margin-bottom:1.8rem;display:block}
+.blog-article-meta{font-size:0.74rem;color:var(--maroon);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.6rem}
+.blog-article-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 2rem}
+
+/* rendered markdown */
+.blog-article{font-size:0.98rem;line-height:1.75;color:var(--text)}
+.blog-article h1{font-family:Georgia,'Times New Roman',serif;font-size:2.1rem;line-height:1.2;margin:0 0 1.2rem;color:var(--text)}
+.blog-article h2{font-family:Georgia,'Times New Roman',serif;font-size:1.5rem;color:var(--maroon);margin:2.2rem 0 0.9rem}
+.blog-article h3{font-size:1.15rem;font-weight:600;color:var(--text);margin:1.8rem 0 0.7rem}
+.blog-article p{margin:0 0 1.1rem}
+.blog-article a{color:var(--maroon);text-decoration:underline;text-underline-offset:2px}
+.blog-article ul,.blog-article ol{margin:0 0 1.2rem 1.4rem}
+.blog-article li{margin-bottom:0.4rem}
+.blog-article img{max-width:100%;height:auto;border-radius:10px;margin:1.4rem 0;display:block}
+.blog-article blockquote{border-left:3px solid var(--maroon);background:var(--maroon-pale);padding:0.8rem 1.2rem;margin:0 0 1.3rem;border-radius:0 6px 6px 0;color:var(--maroon-dark);font-size:0.92rem}
+.blog-article blockquote p{margin:0}
+.blog-article code{background:var(--maroon-pale);color:var(--maroon-dark);padding:2px 6px;border-radius:4px;font-size:0.86em;font-family:'SF Mono',Monaco,Consolas,monospace}
+.blog-article pre{background:var(--maroon-dark);color:#f4e9ec;padding:1.1rem 1.3rem;border-radius:8px;overflow-x:auto;margin:0 0 1.4rem;font-size:0.85rem;line-height:1.6}
+.blog-article pre code{background:none;color:inherit;padding:0}
+.blog-article table{width:100%;border-collapse:collapse;margin:0 0 1.4rem;font-size:0.88rem}
+.blog-article th{text-align:left;background:var(--maroon-pale);color:var(--maroon-dark);font-weight:600;padding:9px 14px;border:1px solid var(--border)}
+.blog-article td{padding:9px 14px;border:1px solid var(--border);vertical-align:top}
+.blog-article hr{border:none;border-top:1px solid var(--border);margin:2rem 0}
+
 @media(max-width:768px){
   .hero-inner,.about-grid{grid-template-columns:1fr}
   .hero-visual{display:none}
   h1{font-size:2.3rem}
+  .blog-list{grid-template-columns:1fr}
+  .blog-intro h2{font-size:1.7rem}
+  .blog-article h1{font-size:1.7rem}
 }
 </style>
 </head>
@@ -151,6 +214,7 @@ footer span{color:rgba(255,255,255,0.9)}
       <li><a href="#highlights">Highlights</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#awards">Awards</a></li>
+      <li><a href="#" id="blog-nav-link">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -420,13 +484,6 @@ footer span{color:rgba(255,255,255,0.9)}
       </div>
 
       <div class="timeline-item">
-          </div>
-          <div class="tl-date">Mar 2022 – Present</div>
-        </div>
-        <p class="tl-desc">Team Lead and technical architect for PiHR — a SaaS-based HR & Payroll platform. Built high-performance microservice solutions with DevOps and infrastructure operations.</p>
-        <div class="tl-tags"><span class="tag">.NET 7</span><span class="tag">ASP.NET Core</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">MSSQL</span><span class="tag">Scrum</span></div>
-      </div>
-      <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="tl-header">
           <div>
@@ -574,7 +631,179 @@ footer span{color:rgba(255,255,255,0.9)}
   <p>Kaniz Fatema Tamanna · Software Architect & AI Product Engineer · <span>Dhaka, Bangladesh</span></p>
 </footer>
 
+<!-- ===== BLOG OVERLAY ===== -->
+<div class="blog-overlay" id="blog-overlay" aria-hidden="true">
+  <div class="blog-top">
+    <div class="blog-top-inner">
+      <div class="blog-brand">Blog · Kaniz Fatema Tamanna</div>
+      <button class="blog-close" id="blog-close" type="button">Close ✕</button>
+    </div>
+  </div>
+  <div class="blog-body" id="blog-body"><!-- list or article rendered here --></div>
+</div>
 
+<!-- marked.js for markdown rendering (vendored locally — no CDN, no build step) -->
+<script src="blogs/marked.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  // Blog files live in the same repo (served by GitHub Pages), so relative
+  // paths work with no CORS or build step. Push a .md + update index.json.
+  var BLOG_DIR = "blogs/";
+
+  var overlay  = document.getElementById("blog-overlay");
+  var bodyEl   = document.getElementById("blog-body");
+  var navLink  = document.getElementById("blog-nav-link");
+  var closeBtn = document.getElementById("blog-close");
+
+  var postsCache = null; // index.json, fetched once
+
+  function esc(s){
+    return String(s == null ? "" : s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+
+  function fmtDate(iso){
+    var d = new Date(iso);
+    if (isNaN(d)) return iso || "";
+    return d.toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
+  }
+
+  function openOverlay(){
+    document.body.classList.add("blog-open");
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden","false");
+    showList();
+  }
+
+  function closeOverlay(){
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden","true");
+    document.body.classList.remove("blog-open");
+  }
+
+  function loading(msg){
+    bodyEl.innerHTML =
+      '<div class="blog-status"><div class="blog-spinner"></div>' + esc(msg||"Loading…") + '</div>';
+  }
+
+  function tagsHtml(tags){
+    if (!tags || !tags.length) return "";
+    return '<div class="blog-card-tags">' +
+      tags.map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join("") +
+      '</div>';
+  }
+
+  function thumbHtml(post){
+    if (post.thumbnail){
+      // If the image fails, swap in a titled gradient fallback.
+      return '<img class="blog-thumb" src="' + esc(post.thumbnail) + '" alt="' + esc(post.title) + '" ' +
+        'onerror="this.outerHTML=\'<div class=&quot;blog-thumb-fallback&quot;>' + esc(post.title) + '</div>\'">';
+    }
+    return '<div class="blog-thumb-fallback">' + esc(post.title) + '</div>';
+  }
+
+  async function getPosts(){
+    if (postsCache) return postsCache;
+    var res = await fetch(BLOG_DIR + "index.json", {cache:"no-cache"});
+    if (!res.ok) throw new Error("index.json not found (" + res.status + ")");
+    var data = await res.json();
+    if (!Array.isArray(data)) throw new Error("index.json must be a JSON array");
+    postsCache = data;
+    return data;
+  }
+
+  async function showList(){
+    loading("Loading posts…");
+    var posts;
+    try {
+      posts = await getPosts();
+    } catch (err){
+      bodyEl.innerHTML =
+        '<div class="blog-status error">Couldn\'t load the blog index.<br>' +
+        esc(err.message) + '<br><br><small>If you\'re viewing this from a file:// path, ' +
+        'run it through a local server or the live site.</small></div>';
+      return;
+    }
+
+    var intro =
+      '<div class="blog-intro">' +
+        '<div class="section-label">Writing</div>' +
+        '<h2>From the <em style="font-style:normal;color:var(--maroon)">blog</em></h2>' +
+        '<p>Notes on software architecture, .NET, and building production AI systems.</p>' +
+      '</div>';
+
+    if (!posts.length){
+      bodyEl.innerHTML = intro + '<div class="blog-status">No posts yet — check back soon.</div>';
+      return;
+    }
+
+    var cards = posts.map(function(post){
+      return (
+        '<article class="blog-card" data-slug="' + esc(post.slug) + '">' +
+          thumbHtml(post) +
+          '<div class="blog-card-body">' +
+            '<div class="blog-card-date">' + esc(fmtDate(post.date)) + '</div>' +
+            '<h3 class="blog-card-title">' + esc(post.title) + '</h3>' +
+            '<p class="blog-card-excerpt">' + esc(post.excerpt || "") + '</p>' +
+            tagsHtml(post.tags) +
+          '</div>' +
+        '</article>'
+      );
+    }).join("");
+
+    bodyEl.innerHTML = intro + '<div class="blog-list">' + cards + '</div>';
+
+    Array.prototype.forEach.call(bodyEl.querySelectorAll(".blog-card"), function(card){
+      card.addEventListener("click", function(){ showPost(card.getAttribute("data-slug")); });
+    });
+  }
+
+  async function showPost(slug){
+    var post = (postsCache || []).filter(function(p){ return p.slug === slug; })[0] || {};
+    loading("Loading post…");
+
+    var md;
+    try {
+      var res = await fetch(BLOG_DIR + slug + ".md", {cache:"no-cache"});
+      if (!res.ok) throw new Error(slug + ".md not found (" + res.status + ")");
+      md = await res.text();
+    } catch (err){
+      bodyEl.innerHTML =
+        '<button class="blog-back" id="blog-back">← Back to posts</button>' +
+        '<div class="blog-status error">Couldn\'t load this post.<br>' + esc(err.message) + '</div>';
+      document.getElementById("blog-back").addEventListener("click", showList);
+      return;
+    }
+
+    var html = window.marked ? window.marked.parse(md) : "<pre>" + esc(md) + "</pre>";
+
+    var hero = post.thumbnail
+      ? '<img class="blog-hero-img" src="' + esc(post.thumbnail) + '" alt="' + esc(post.title) + '" onerror="this.style.display=\'none\'">'
+      : "";
+    var meta = post.date ? '<div class="blog-article-meta">' + esc(fmtDate(post.date)) + '</div>' : "";
+    var tgs  = (post.tags && post.tags.length)
+      ? '<div class="blog-article-tags">' + post.tags.map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div>'
+      : "";
+
+    bodyEl.innerHTML =
+      '<button class="blog-back" id="blog-back">← Back to posts</button>' +
+      hero + meta + tgs +
+      '<div class="blog-article">' + html + '</div>';
+
+    document.getElementById("blog-back").addEventListener("click", showList);
+    overlay.scrollTop = 0;
+  }
+
+  // wire up
+  navLink.addEventListener("click", function(e){ e.preventDefault(); openOverlay(); });
+  closeBtn.addEventListener("click", closeOverlay);
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && overlay.classList.contains("open")) closeOverlay();
+  });
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "realtime-voice-vertex-ai",
+    "title": "An Exposed API Key, a Suspended Google Project, and the Architecture Lessons Behind a Real-Time AI Voice System",
+    "date": "2026-07-24",
+    "excerpt": "A production case study: how an exposed frontend API key got a Google Cloud project suspended — and how migrating a real-time voice pipeline to Vertex AI fixed both security and perceived latency.",
+    "tags": ["AI", "Vertex AI", "Architecture", "Security", "Voice AI"],
+    "thumbnail": "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "slug": "rag-pipeline-basics",
+    "title": "Building RAG Pipelines with .NET",
+    "date": "2025-07-20",
+    "excerpt": "A practical guide to Retrieval-Augmented Generation architecture — from chunking and embeddings to vector search and grounded answers.",
+    "tags": [".NET", "AI", "RAG"],
+    "thumbnail": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "slug": "dotnet-architecture-tips",
+    "title": "Clean Architecture Tips for .NET Teams",
+    "date": "2025-07-10",
+    "excerpt": "Hard-won lessons on structuring ASP.NET Core solutions that stay maintainable as the team and the codebase grow.",
+    "tags": [".NET", "Architecture", "Backend"],
+    "thumbnail": "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&w=800&q=60"
+  }
+]
