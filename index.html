@@ -114,15 +114,15 @@ h2.title .g{background:var(--grad);-webkit-background-clip:text;background-clip:
 @keyframes scrolly{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,10px)}}
 
 /* ===== COMPANIES LOGO BAND ===== */
-.companies{padding:66px 0;background:#EBE4D4;border-top:1px solid rgba(30,22,14,.08);border-bottom:1px solid rgba(30,22,14,.08)}
-.companies-label{text-align:center;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a745a;font-weight:600;margin-bottom:40px}
+.companies{padding:66px 0;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.companies-label{text-align:center;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:40px}
 .logo-band{display:flex;flex-wrap:wrap;justify-content:center;gap:30px 40px}
 .logo-item{display:flex;flex-direction:column;align-items:center;gap:15px;margin:0}
-.logo-tile{width:118px;height:118px;display:flex;align-items:center;justify-content:center;background:#FBF8F0;border:1px solid rgba(30,22,14,.12);border-radius:26px;padding:20px;box-shadow:5px 8px 16px rgba(40,30,18,.26),2px 3px 0 rgba(40,30,18,.10);transition:transform .25s,box-shadow .25s}
-.logo-item:hover .logo-tile{transform:translate(-2px,-3px);box-shadow:8px 13px 24px rgba(40,30,18,.34),3px 4px 0 rgba(40,30,18,.12)}
+.logo-tile{width:118px;height:118px;display:flex;align-items:center;justify-content:center;background:#FBF8F0;border:1px solid rgba(255,255,255,.10);border-radius:26px;padding:20px;box-shadow:6px 9px 20px rgba(0,0,0,.5),2px 3px 0 rgba(0,0,0,.35);transition:transform .25s,box-shadow .25s}
+.logo-item:hover .logo-tile{transform:translate(-2px,-3px);box-shadow:9px 14px 28px rgba(0,0,0,.62),3px 4px 0 rgba(0,0,0,.4)}
 .logo-tile img{max-width:100%;max-height:100%;width:auto;object-fit:contain;border-radius:8px}
 .logo-mono2{font-weight:800;font-size:1.7rem;letter-spacing:-0.03em;color:#2a2118}
-.logo-name{font-size:0.9rem;font-weight:600;color:#5a4a38;letter-spacing:0.01em}
+.logo-name{font-size:0.9rem;font-weight:600;color:var(--muted);letter-spacing:0.01em}
 
 /* ===== ABOUT ===== */
 .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
@@ -182,6 +182,8 @@ h2.title .g{background:var(--grad);-webkit-background-clip:text;background-clip:
 .tl-co{color:var(--brand-2);font-weight:600;font-size:0.9rem;margin-top:2px}
 .tl-date{font-size:0.74rem;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);padding:5px 12px;border-radius:999px;white-space:nowrap}
 .tl-item.current .tl-date{color:#fff;background:var(--grad);border-color:transparent}
+.tl-item--client::before{background:var(--surface);border-color:var(--brand-2);box-shadow:0 0 0 4px rgba(34,211,238,0.12)}
+.tl-item--client .tl-date{color:var(--brand-2);background:var(--grad-soft);border-color:var(--line-2)}
 .tl-desc{color:var(--muted);font-size:0.9rem;margin-top:6px}
 .tl-products{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .tl-product{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
@@ -562,6 +564,17 @@ footer .fnav a:hover{color:var(--brand-2)}
           </div>
           <p class="tl-desc">Developed e-commerce and social networking solutions using PHP, Drupal, MySQL and PayPal integration.</p>
           <div class="tl-tags"><span class="tag">PHP</span><span class="tag">Drupal</span><span class="tag">MySQL</span><span class="tag">AJAX</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-item--client reveal">
+        <div class="tl-card">
+          <div class="tl-top">
+            <div><div class="tl-role">Notable Client</div><div class="tl-co">Unilever</div></div>
+            <div class="tl-date">Client</div>
+          </div>
+          <p class="tl-desc">Delivered and supported enterprise solutions for <strong>Unilever</strong> as a client engagement — bringing product and platform work to a global consumer-goods brand.</p>
+          <div class="tl-tags"><span class="tag">Client Engagement</span><span class="tag">Enterprise</span></div>
         </div>
       </div>
     </div>
