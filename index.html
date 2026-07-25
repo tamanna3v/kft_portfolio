@@ -117,12 +117,10 @@ h2.title .g{background:var(--grad);-webkit-background-clip:text;background-clip:
 .companies{padding:54px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
 .companies-label{text-align:center;font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint);margin-bottom:26px}
 .logo-band{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
-.logo-tile{flex:1 1 160px;min-width:150px;max-width:230px;height:74px;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px;transition:transform .25s,border-color .25s,background .25s;filter:grayscale(1);opacity:0.72}
-.logo-tile:hover{filter:grayscale(0);opacity:1;transform:translateY(-3px);border-color:var(--brand);background:var(--surface-2)}
-.logo-tile img{max-height:40px;max-width:100%;width:auto;object-fit:contain}
-.logo-mono{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.82rem;color:#fff;background:var(--grad);letter-spacing:-0.02em}
-.logo-word{font-weight:700;font-size:0.9rem;letter-spacing:-0.01em;white-space:nowrap}
-.logo-word small{display:block;font-size:0.62rem;font-weight:500;color:var(--faint);letter-spacing:0.04em}
+.logo-tile{flex:1 1 148px;min-width:130px;max-width:184px;height:86px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.logo-tile:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.42);border-color:var(--brand)}
+.logo-tile img{max-height:54px;max-width:100%;width:auto;object-fit:contain;border-radius:7px}
+.logo-tile--text{font-weight:800;font-size:1.18rem;letter-spacing:.005em;color:#16203a}
 
 /* ===== ABOUT ===== */
 .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
@@ -367,14 +365,13 @@ footer .fnav a:hover{color:var(--brand-2)}
   <div class="wrap">
     <p class="companies-label reveal">Companies I've worked with</p>
     <div class="logo-band">
-      <!-- Swap the .logo-mono + .logo-word for <img src="..."> when real logos are provided -->
-      <div class="logo-tile reveal" data-d="1"><span class="logo-mono">FM</span><span class="logo-word">FutureMind<small>2025 — Present</small></span></div>
-      <div class="logo-tile reveal" data-d="1"><span class="logo-mono">V</span><span class="logo-word">Vivasoft<small>2022 — 2025</small></span></div>
-      <div class="logo-tile reveal" data-d="2"><span class="logo-mono">CE</span><span class="logo-word">CommEngine<small>2018 — 2022</small></span></div>
-      <div class="logo-tile reveal" data-d="2"><span class="logo-mono">IQ</span><span class="logo-word">IQVIA<small>2013 — 2018</small></span></div>
-      <div class="logo-tile reveal" data-d="3"><span class="logo-mono" style="background:#1F36C7">U</span><span class="logo-word">Unilever<small>Client / Brand</small></span></div>
-      <div class="logo-tile reveal" data-d="3"><span class="logo-mono">L</span><span class="logo-word">LEADS Corp<small>2011 — 2012</small></span></div>
-      <div class="logo-tile reveal" data-d="3"><span class="logo-mono">Cr</span><span class="logo-word">Creash<small>2011</small></span></div>
+      <div class="logo-tile reveal" data-d="1"><img src="assets/futuremind-logo.png" alt="FutureMind" loading="lazy"></div>
+      <div class="logo-tile reveal" data-d="1"><img src="assets/vivasoftltd_logo.jpg" alt="Vivasoft Limited" loading="lazy"></div>
+      <div class="logo-tile reveal" data-d="2"><img src="assets/commengine-logo.png" alt="CommEngine" loading="lazy"></div>
+      <div class="logo-tile reveal" data-d="2"><img src="assets/iqvia_logo.jpg" alt="IQVIA" loading="lazy"></div>
+      <div class="logo-tile reveal" data-d="3"><img src="assets/unilever_logo.jpg" alt="Unilever" loading="lazy"></div>
+      <div class="logo-tile reveal" data-d="3"><img src="assets/LEADS-1-150x29.png" alt="LEADS Corporation" loading="lazy"></div>
+      <div class="logo-tile logo-tile--text reveal" data-d="4">Creash</div>
     </div>
   </div>
 </div>
