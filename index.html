@@ -116,8 +116,8 @@ h2.title .g{background:var(--grad);-webkit-background-clip:text;background-clip:
 /* ===== COMPANIES LOGO BAND ===== */
 .companies{padding:54px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
 .companies-label{text-align:center;font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint);margin-bottom:26px}
-.logo-band{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.logo-tile{height:74px;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px;transition:transform .25s,border-color .25s,background .25s;filter:grayscale(1);opacity:0.72}
+.logo-band{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.logo-tile{flex:1 1 160px;min-width:150px;max-width:230px;height:74px;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px;transition:transform .25s,border-color .25s,background .25s;filter:grayscale(1);opacity:0.72}
 .logo-tile:hover{filter:grayscale(0);opacity:1;transform:translateY(-3px);border-color:var(--brand);background:var(--surface-2)}
 .logo-tile img{max-height:40px;max-width:100%;width:auto;object-fit:contain}
 .logo-mono{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.82rem;color:#fff;background:var(--grad);letter-spacing:-0.02em}
@@ -285,7 +285,6 @@ footer .fnav a:hover{color:var(--brand-2)}
   .about-grid,.contact-wrap{grid-template-columns:1fr;gap:30px}
   .principles-grid{grid-template-columns:repeat(2,1fr)}
   .hl-grid,.awards-grid{grid-template-columns:1fr 1fr}
-  .logo-band{grid-template-columns:repeat(3,1fr)}
   .scroll-hint{display:none}
 }
 @media(max-width:640px){
@@ -298,7 +297,6 @@ footer .fnav a:hover{color:var(--brand-2)}
   .nav-toggle.x span:nth-child(2){opacity:0}
   .nav-toggle.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .principles-grid,.hl-grid,.awards-grid,.tl-products{grid-template-columns:1fr}
-  .logo-band{grid-template-columns:repeat(2,1fr)}
   .stats{grid-template-columns:1fr 1fr}
 }
 @media(prefers-reduced-motion:reduce){
@@ -374,6 +372,7 @@ footer .fnav a:hover{color:var(--brand-2)}
       <div class="logo-tile reveal" data-d="1"><span class="logo-mono">V</span><span class="logo-word">Vivasoft<small>2022 — 2025</small></span></div>
       <div class="logo-tile reveal" data-d="2"><span class="logo-mono">CE</span><span class="logo-word">CommEngine<small>2018 — 2022</small></span></div>
       <div class="logo-tile reveal" data-d="2"><span class="logo-mono">IQ</span><span class="logo-word">IQVIA<small>2013 — 2018</small></span></div>
+      <div class="logo-tile reveal" data-d="3"><span class="logo-mono" style="background:#1F36C7">U</span><span class="logo-word">Unilever<small>Client / Brand</small></span></div>
       <div class="logo-tile reveal" data-d="3"><span class="logo-mono">L</span><span class="logo-word">LEADS Corp<small>2011 — 2012</small></span></div>
       <div class="logo-tile reveal" data-d="3"><span class="logo-mono">Cr</span><span class="logo-word">Creash<small>2011</small></span></div>
     </div>
